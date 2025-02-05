@@ -1,0 +1,201 @@
+/* Game Area */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the game container */
+    text-align: center;
+    width: 100%;
+}
+
+/* Color Box (with Glass Effect and Rounded Corners) */
+.color-box {
+    width: 20vw; /* 20% of the viewport width */
+    height: 20vw; /* 20% of the viewport width */
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    backdrop-filter: blur(8px); /* Glass effect */
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Game Status: Position it next to the Color Box */
+.game-status {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    position: absolute;
+    top: 10%; /* Vertically center relative to the color-box */
+    left: 65%; /* Position it to the right of the color box */
+    margin-left: 15px; /* Space between color box and game status */
+    transform: translateY(-50%); /* Vertically center the game status */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Color Option Buttons - Glass Effect, Curvy Shape */
+.color-options {
+    display: flex;
+    flex-wrap: wrap; /* Wrap buttons onto multiple lines */
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.colorOption {
+    width: 80px;
+    height: 80px;
+    border: none;
+    border-radius: 15px; /* Curvy corners */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px); /* Glass effect */
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Hover Effect for Buttons */
+.colorOption:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Slightly bigger shadow on hover */
+}
+
+/* Score and New Game Button */
+#score {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#newGameButton,
+#reshuffleButton {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    border-radius: 10px; /* Curvy buttons */
+}
+
+#newGameButton:hover,
+#reshuffleButton:hover {
+    background-color: #2980b9;
+}
+
+/* Animations */
+.celebration {
+    animation: celebrationAnimation 1s ease-in-out;
+}
+
+@keyframes celebrationAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.fadeOut {
+    animation: fadeOutAnimation 1s ease-in-out;
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .colorOption {
+        width: 60px;
+        height: 60px;
+    }
+
+    .color-box {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 5px;
+    }
+
+    #newGameButton,
+    #reshuffleButton {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .game-status {
+        font-size: 14px; /* Make game status text smaller on mobile */
+        margin-left: 10px; /* Adjust margin for smaller screens */
+    }
+
+    /* Grid Layout for 3 Buttons Per Row on Mobile */
+    .color-options {
+        display: grid; /* Switch to grid layout */
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons per row */
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .colorOption {
+        width: 50px;
+        height: 50px;
+    }
+
+    .color-box {
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    #newGameButton,
+    #reshuffleButton {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .game-status {
+        font-size: 12px; /* Smaller font size for very small screens */
+        margin-left: 8px; /* Smaller margin for mobile devices */
+    }
+
+    /* Grid Layout for 3 Buttons Per Row on Smaller Mobile Screens */
+    .color-options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on small screens */
+    }
+}
