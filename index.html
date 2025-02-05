@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Color Guessing Game</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Sidebar Navbar -->
     <div class="navbar">
-        <h1>Color Guessing Game</h1>
-        <div id="gameStatus" class="game-status"></div>
+      <h1>Color Guessing Game</h1>
+      <div data-testid="gameStatus" id="gameStatus" class="game-status"></div>
     </div>
 
     <!-- Game Area -->
     <div class="game-container">
-        <div id="colorBox" class="color-box"></div>
-        <div class="colorGuess" data-testid="colorGuess">Guess which color matches the box Above!</div>
+      <div data-testid="colorBox" id="colorBox" class="color-box"></div>
+      <div data-testid="gameInstructions" class="colorGuess">
+        Guess which color matches the box Above!
+      </div>
 
-        <div class="color-options">
-            <button class="colorOption" data-testid="colorOption"></button>
-            <button class="colorOption" data-testid="colorOption"></button>
-            <button class="colorOption" data-testid="colorOption"></button>
-            <button class="colorOption" data-testid="colorOption"></button>
-            <button class="colorOption" data-testid="colorOption"></button>
-            <button class="colorOption" data-testid="colorOption"></button>
-        </div>
-        <div id="score" data-testid="score">Score: 0</div>
-        
-        <!-- New Game and Reshuffle Buttons -->
-        <div class="button-container">
-            <button id="newGameButton" data-testid="newGameButton">New Game</button>
-            <button id="reshuffleButton" data-testid="reshuffleButton">🔄 Reshuffle</button>
-        </div>
+      <div class="color-options">
+        <button class="colorOption" data-testid="colorOption"></button>
+        <button class="colorOption" data-testid="colorOption"></button>
+        <button class="colorOption" data-testid="colorOption"></button>
+        <button class="colorOption" data-testid="colorOption"></button>
+        <button class="colorOption" data-testid="colorOption"></button>
+        <button class="colorOption" data-testid="colorOption"></button>
+      </div>
+      <div id="score" data-testid="score">Score: 0</div>
+
+      <!-- New Game and Reshuffle Buttons -->
+      <div class="button-container">
+        <button id="newGameButton" data-testid="newGameButton">New Game</button>
+        <button id="reshuffleButton" data-testid="reshuffleButton">
+          🔄 Reshuffle
+        </button>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
